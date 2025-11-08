@@ -29,7 +29,6 @@ sudo stty -F /dev/ttyUSB0 -a | grep -E "speed|cs8"
 Проверка отправки (НЕ РАБОТАЕТ):
 ```bash
 printf '\x55\xF8\x00\x00\xF8\xAA' | sudo tee /dev/ttyUSB0
-# Комментарий: Отправляем команду запроса статуса в HEX формате
 
 # Проверить буфер порта после отправки
 sudo timeout 1s cat /dev/ttyUSB0 | hexdump -C
